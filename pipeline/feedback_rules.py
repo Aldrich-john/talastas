@@ -1,5 +1,5 @@
 """
-Artic: Rule-Based Presentation Feedback Engine
+Talastas: Rule-Based Presentation Feedback Engine
 Generates actionable, presentation-oriented coaching suggestions based on:
 - Disfluency density (Disfluencies Per Minute - DPM)
 - Breakdown of specific filler types (um, uh, like)
@@ -52,7 +52,7 @@ def generate_presentation_feedback(
     # 2. Disfluency Density (DPM) Evaluation
     if dpm <= 2.0:
         fluency_grade = "High Clarity (Professional)"
-        strengths.append(f"Excellent fluency with only {dpm} fillers per minute. Your speech is articulate and concise.")
+        strengths.append(f"Excellent fluency with only {dpm} fillers per minute. Your speech is talastasulate and concise.")
     elif 2.0 < dpm <= 5.0:
         fluency_grade = "Moderate Fluency"
         suggestions.append({

@@ -1,5 +1,5 @@
 """
-Artic: LoRA-Adapted Whisper Fine-Tuning Module
+Talastas: LoRA-Adapted Whisper Fine-Tuning Module
 Uses Hugging Face Transformers and PEFT (Parameter-Efficient Fine-Tuning) to adapt
 Whisper for verbatim Taglish speech recognition and disfluency retention (um, uh, like).
 
@@ -72,7 +72,7 @@ def run_fine_tuning_dummy(epochs: int = 3, batch_size: int = 4):
         corpus = json.load(f)
 
     print("=" * 60)
-    print("ARTIC: LoRA-Adapted Whisper Fine-Tuning Pipeline")
+    print("TALASTAS: LoRA-Adapted Whisper Fine-Tuning Pipeline")
     print(f"Target Task: Verbatim Taglish ASR with Disfluency Retention")
     print(f"Dataset Size: {len(corpus)} annotated audio utterances")
     print(f"Base Model: {config.WHISPER_BASE_MODEL} (100% Free / Open Source)")

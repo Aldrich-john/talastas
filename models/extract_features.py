@@ -1,5 +1,5 @@
 """
-Artic: Acoustic & BERT Contextual Feature Extraction Module
+Talastas: Acoustic & BERT Contextual Feature Extraction Module
 Combines:
 1. Acoustic/Prosodic features (duration, pause_before, pause_after, relative duration)
 2. Contextual NLP features (Multilingual BERT token representations)

@@ -1,5 +1,5 @@
 """
-Artic: Complete Demonstration Runner
+Talastas: Complete Demonstration Runner
 Executes the full pipeline step-by-step:
 1. Synthetic Taglish data generation
 2. LoRA-Adapted Whisper training check
@@ -25,7 +25,7 @@ from data.generate_synthetic_data import create_dataset
 from models.train_whisper_lora import run_fine_tuning_dummy
 from models.extract_features import build_dataset_features
 from models.train_xgboost import train_xgboost_classifier
-from pipeline.artic_engine import ArticFeedbackSystem
+from pipeline.talastas_engine import TalastasFeedbackSystem
 import config
 
 # Ensure UTF-8 output on Windows console
@@ -35,9 +35,9 @@ if sys.stdout.encoding != 'utf-8':
     except Exception:
         pass
 
-def run_artic_demo():
+def run_talastas_demo():
     print("\n" + "=" * 70)
-    print("      [STARTING ARTIC DISFLUENCY FEEDBACK SYSTEM DEMO]")
+    print("      [STARTING TALASTAS DISFLUENCY FEEDBACK SYSTEM DEMO]")
     print("      (LoRA-Whisper + Multilingual BERT + XGBoost)")
     print("=" * 70)
 
@@ -63,7 +63,7 @@ def run_artic_demo():
 
     # 5. End-to-End Inference & Feedback Generation
     print("\n[Step 5/5] Running End-to-End Inference and Presentation Feedback...")
-    engine = ArticFeedbackSystem()
+    engine = TalastasFeedbackSystem()
 
     with open(corpus_file, "r", encoding="utf-8") as f:
         corpus = json.load(f)
@@ -88,11 +88,11 @@ def run_artic_demo():
     engine.save_and_display_report(report_b, student_name="Student Presentation (Fluent Lexical Use)")
 
     print("\n" + "=" * 70)
-    print("      [SUCCESS] ARTIC DEMO COMPLETED SUCCESSFULLY!")
+    print("      [SUCCESS] TALASTAS DEMO COMPLETED SUCCESSFULLY!")
     print("Generated Reports:")
     print(f"  • {config.REPORTS_DIR / (sample_a['id'] + '_report.md')}")
     print(f"  • {config.REPORTS_DIR / (sample_b['id'] + '_report.md')}")
     print("=" * 70)
 
 if __name__ == "__main__":
-    run_artic_demo()
+    run_talastas_demo()

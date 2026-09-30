@@ -1,5 +1,5 @@
 """
-Artic: Disfluency Classification with XGBoost
+Talastas: Disfluency Classification with XGBoost
 Trains a multi-class gradient boosted decision tree on acoustic + BERT contextual features.
 Target classes:
 0: fluent
@@ -35,7 +35,7 @@ def train_xgboost_classifier():
     y = data["y"]
 
     print("=" * 60)
-    print("ARTIC: XGBoost Disfluency Classifier Training")
+    print("TALASTAS: XGBoost Disfluency Classifier Training")
     print(f"Features: {X.shape[1]}-dimensional vector (Acoustic + BERT Context)")
     print(f"Total instances: {X.shape[0]} word tokens")
     print("=" * 60)

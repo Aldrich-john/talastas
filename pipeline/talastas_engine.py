@@ -1,5 +1,5 @@
 """
-Artic: End-to-End Taglish Speech Disfluency Feedback Engine
+Talastas: End-to-End Taglish Speech Disfluency Feedback Engine
 Integrates:
 1. Whisper LoRA (Verbatim Taglish Transcription + Timestamps)
 2. Multilingual BERT (Contextual & Syntactic Feature Extraction)
@@ -28,12 +28,12 @@ if sys.stdout.encoding != 'utf-8':
     except Exception:
         pass
 
-class ArticFeedbackSystem:
+class TalastasFeedbackSystem:
     def __init__(self):
-        print("[Artic] Initializing Artic Feedback System...")
+        print("[Talastas] Initializing Talastas Feedback System...")
         self.feature_extractor = DisfluencyFeatureExtractor()
         self.classifier = self._load_classifier()
-        print("[Artic] Pipeline initialized successfully.")
+        print("[Talastas] Pipeline initialized successfully.")
 
     def _load_classifier(self):
         """Loads trained XGBoost model or fallback classifier."""
@@ -45,22 +45,22 @@ class ArticFeedbackSystem:
                 import xgboost as xgb
                 clf = xgb.XGBClassifier()
                 clf.load_model(str(xgb_path))
-                print(f"[Artic] Loaded XGBoost model from {xgb_path}")
+                print(f"[Talastas] Loaded XGBoost model from {xgb_path}")
                 return clf
             except Exception as e:
-                print(f"[Artic] Could not load XGBoost ({e}). Checking surrogate...")
+                print(f"[Talastas] Could not load XGBoost ({e}). Checking surrogate...")
 
         if surrogate_path.exists():
             try:
                 import pickle
                 with open(surrogate_path, "rb") as f:
                     clf = pickle.load(f)
-                print(f"[Artic] Loaded surrogate model from {surrogate_path}")
+                print(f"[Talastas] Loaded surrogate model from {surrogate_path}")
                 return clf
             except Exception as e:
-                print(f"[Artic] Could not load surrogate ({e})")
+                print(f"[Talastas] Could not load surrogate ({e})")
 
-        print("[Artic] No pre-trained model file found. Running with rule-augmented inference mode.")
+        print("[Talastas] No pre-trained model file found. Running with rule-augmented inference mode.")
         return None
 
     def analyze_speech_record(self, speech_record: dict) -> dict:
@@ -160,7 +160,7 @@ class ArticFeedbackSystem:
 
         # Save Markdown Report
         analytics = report["analytics"]
-        md_content = f"""# 🎙️ Artic Speech Feedback Report: {student_name}
+        md_content = f"""# 🎙️ Talastas Speech Feedback Report: {student_name}
 **Speech ID:** `{speech_id}`  
 **Analyzed System:** LoRA-Adapted Whisper + Multilingual BERT + XGBoost  
 
@@ -203,7 +203,7 @@ class ArticFeedbackSystem:
             f.write(md_content)
 
         print("\n" + "=" * 65)
-        print(f"       ARTIC PRESENTATION COACHING REPORT - {speech_id}")
+        print(f"       TALASTAS PRESENTATION COACHING REPORT - {speech_id}")
         print("=" * 65)
         print(f"Verbatim Speech: \"{report['transcription_verbatim']}\"")
         print("-" * 65)
@@ -228,7 +228,7 @@ if __name__ == "__main__":
     if corpus_file.exists():
         with open(corpus_file, "r", encoding="utf-8") as f:
             corpus = json.load(f)
-        engine = ArticFeedbackSystem()
+        engine = TalastasFeedbackSystem()
         # Analyze first sample with fillers
         sample = corpus[0]
         report = engine.analyze_speech_record(sample)

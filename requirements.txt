@@ -1,4 +1,4 @@
-# Artic Disfluency Feedback System Dependencies
+# Talastas Disfluency Feedback System Dependencies
 # All underlying models and libraries are 100% FREE and Open Source
 
 # Core Deep Learning & NLP

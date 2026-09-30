@@ -1,4 +1,4 @@
-# 🎙️ Artic: Taglish Speech Disfluency Feedback System
+# 🎙️ Talastas: Taglish Speech Disfluency Feedback System
 **Utilizing LoRA-Adapted Whisper, BERT-Based Features, and XGBoost for Presentation Training**
 
 ---
@@ -9,7 +9,7 @@
 > **YES. All three core models and libraries are 100% FREE and Open-Source.**  
 > You do **not** need paid APIs (like OpenAI ChatGPT API or Google Cloud Speech API). The entire pipeline runs locally or on free Google Colab GPUs (T4).
 
-| Component | Technology | License | Cost | Role in Artic |
+| Component | Technology | License | Cost | Role in Talastas |
 | :--- | :--- | :--- | :--- | :--- |
 | **ASR & Alignment** | `openai/whisper-small` + `peft` (LoRA) | MIT / Apache 2.0 | **100% Free** | Verbatim Taglish transcription with disfluency preservation ("um", "uh", "like") & word timestamps. |
 | **Contextual NLP** | `bert-base-multilingual-cased` or `jcblaise/roberta-tagalog-base` | Apache 2.0 | **100% Free** | Syntactic & contextual embeddings to disambiguate filler "like" vs lexical verb/preposition "like". |
@@ -108,7 +108,7 @@ finetune/
 │   └── train_xgboost.py            # Trains XGBoost and outputs F1/Precision/Recall
 │
 ├── pipeline/
-│   ├── artic_engine.py             # Inference pipeline & report generator
+│   ├── talastas_engine.py             # Inference pipeline & report generator
 │   └── feedback_rules.py           # Presentation coaching rules & scoring
 │
 └── reports/                        # Generated student feedback reports

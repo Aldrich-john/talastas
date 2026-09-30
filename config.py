@@ -16,7 +16,7 @@ WHISPER_FALLBACK_MODEL = "openai/whisper-tiny"
 BERT_BASE_MODEL = "bert-base-multilingual-cased" # Multilingual BERT supporting Tagalog + English
 TAGALOG_ROBERTA_MODEL = "jcblaise/roberta-tagalog-base" # Optional Philippine NLP community model
 
-# Target disfluency classes according to Artic thesis scope:
+# Target disfluency classes according to Talastas thesis scope:
 # 0: Fluent (normal word)
 # 1: "um"
 # 2: "uh"

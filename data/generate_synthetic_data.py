@@ -1,5 +1,5 @@
 """
-Synthetic Taglish Dataset Generator for Artic
+Synthetic Taglish Dataset Generator for Talastas
 Generates annotated Taglish utterances containing both fluent words and disfluencies:
 - "um"
 - "uh"

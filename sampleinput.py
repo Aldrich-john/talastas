@@ -1,6 +1,6 @@
-from pipeline.artic_engine import ArticFeedbackSystem
+from pipeline.talastas_engine import TalastasFeedbackSystem
 
-engine = ArticFeedbackSystem()
+engine = TalastasFeedbackSystem()
 
 my_speech = {
     "id": "my_test",
